@@ -33,14 +33,17 @@
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  export default{
+    created(){
+      this.$http.get("https:\\jsonplaceholder.typicode.com/users").then(response=>{
+        console.log(response.data)
+      })      
+      .catch(e=>{
+        console.log('error');
+      })
     }
   }
-}
+
 </script>
 
 <style>

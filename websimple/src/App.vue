@@ -1,27 +1,26 @@
 <template>
     <div class="container">
-      <navbar></navbar>
-      <contents></contents>
+      <navbar :webtitle="website"></navbar>
+      <router-view></router-view>
       <footerbar></footerbar>
     </div> 
 </template>
 
 <script>
-import Header from './Header.vue'
-import Footer from './Footer.vue'
-import Contents from './Contents.vue';
+import Header from './components/layouts/Header.vue'
+import Footer from './components/layouts/Footer.vue'
 
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      website:'Trabajo De Grado'
     }
   },
   components:{
     'navbar': Header,
     'footerbar': Footer,
-    'contents': Contents
   }
 }
 </script>
